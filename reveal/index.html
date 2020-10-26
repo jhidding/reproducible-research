@@ -78,21 +78,16 @@
 </ul></li>
 <li>“Experiment” is interpreted in a wide sense, encompassing also computational work</li>
 </ul>
-</section></section>
-<section>
-<section id="the-reproducibility-crisis" class="title-slide slide level1">
-<h1>The Reproducibility Crisis</h1>
-
 </section>
-<section id="why-all-the-talk" class="slide level2">
-<h2>Why all the talk?</h2>
-<p><img data-src="./img/reproducibility_nature.jpg" /></p>
+<section id="the-reproducibility-crisis" class="slide level2">
+<h2>The Reproducibility Crisis</h2>
+<img data-src="./img/reproducibility_nature.jpg" class="stretch" />
 <aside class="notes">
 <p>A 2016 <a href="http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">survey</a> in Nature revealed that irreproducible experiments are a problem across all domains of science.</p>
 </aside>
 </section>
-<section id="factors-behind-irreproducible-research" class="slide level2">
-<h2>Factors behind irreproducible research</h2>
+<section id="irreproducible-research-why" class="slide level2">
+<h2>Irreproducible research: why?</h2>
 <ul>
 <li>Not enough documentation on how experiment is conducted and data is generated</li>
 <li>Data used to generate original results unavailable</li>
@@ -111,11 +106,6 @@
 <p>A published article is like the top of a pyramid. It rests on multiple levels that each contributes to its reproducibility.</p>
 </aside>
 <img data-src="./img/repro-pyramid.png" class="stretch" />
-</section></section>
-<section>
-<section id="reproducible-replicable-robust-generalisable" class="title-slide slide level1">
-<h1>Reproducible, Replicable, Robust, Generalisable</h1>
-
 </section>
 <section id="semantics" class="slide level2">
 <h2>Semantics</h2>
@@ -125,12 +115,225 @@
 <p>While reproducibility is the minimum requirement and can be solved with “good enough” computational practices, replicability/robustness/generalisability of scientific findings are an even greater concern involving research misconduct, questionable research practices (p-hacking, HARKing, cherry-picking), sloppy methods, and other conscious and unconscious biases.</p>
 </aside>
 </section>
-<section id="discuss-with-your-neighbors-or-among-all-participants" class="slide level2">
-<h2>Discuss with your neighbors or among all participants</h2>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
 <blockquote>
 <p>Computer programs are expected to produce the same output for the same inputs. Is that true for research software?</p>
 <p>Can you give some examples? What can we do about it?</p>
 </blockquote>
+</section></section>
+<section>
+<section id="organization-projects" class="title-slide slide level1">
+<h1>Organization Projects</h1>
+
+</section>
+<section id="lesson-page" class="slide level2">
+<h2>Lesson page</h2>
+<p><a href="https://coderefinery.github.io/reproducible-research/02-organizing-projects/">Code Refinery/Reproducible Research/Organizing Projects</a></p>
+</section></section>
+<section>
+<section id="recording-dependencies" class="title-slide slide level1">
+<h1>Recording Dependencies</h1>
+
+</section>
+<section id="dependencies" class="slide level2">
+<h2>Dependencies</h2>
+<ul>
+<li><strong>Reproducibility</strong>: We can control our code but how can we control dependencies?</li>
+<li><strong>10-year challenge</strong>: Try to build/run your own code that you have created 10 (or less) years ago. Will your code from today work in 5 years if you don’t change it?</li>
+<li><strong>Dependency hell</strong>: Different codes on the same environment can have conflicting dependencies.</li>
+</ul>
+</section>
+<section id="dependency-hell" class="slide level2">
+<h2>Dependency Hell</h2>
+<p><a href="https://xkcd.com/1987/"><img data-src="./img/python_environment.png" /></a></p>
+</section>
+<section id="lesson-page-1" class="slide level2">
+<h2>Lesson page</h2>
+<p><a href="https://coderefinery.github.io/reproducible-research/03-dependencies/">Code Refinery/Reproducible Research/Recording Dependencies</a></p>
+</section></section>
+<section>
+<section id="recording-environments" class="title-slide slide level1">
+<h1>Recording Environments</h1>
+
+</section>
+<section id="containers" class="slide level2">
+<h2>Containers</h2>
+<ul>
+<li>Containers can be built to bundle <em>all the necessary ingredients</em> (data, code, environment).</li>
+<li>A container provides operating-system-level virtualization, sharing the host system’s kernel with other containers.</li>
+<li>Popular container implementations are <a href="https://www.docker.com/">Docker</a> and <a href="http://singularity.lbl.gov/">Singularity</a>.</li>
+</ul>
+</section>
+<section id="docker" class="slide level2">
+<h2>Docker</h2>
+<ul>
+<li>Available for most common operating systems.</li>
+<li>A mechanism to “send the computer to the data” when data is too large or too sensitive to travel over network.</li>
+<li><a href="https://hub.docker.com/">DockerHub</a> is a platform to share Docker images (stored in repositories - similar to a Git repository).</li>
+<li>Public Docker images available on <a href="https://hub.docker.com/">DockerHub</a>.</li>
+</ul>
+</section>
+<section id="warning" class="slide level2">
+<h2>Warning</h2>
+<blockquote>
+<p>Not all images can be trusted! There have been examples of contaminated images so investigate before using images blindly. Apply same caution as installing software packages from untrusted package repositories.</p>
+</blockquote>
+</section>
+<section id="semantics-1" class="slide level2">
+<h2>Semantics</h2>
+<ul>
+<li>Image is like a blueprint. It is immutable.</li>
+<li>Container is an instance of an image.</li>
+<li>Dockerfile is a recipe which creates a container based on an image and applies small changes to it.</li>
+</ul>
+</section>
+<section id="pros" class="slide level2">
+<h2>Pros</h2>
+<ul>
+<li>Allow for seamlessly moving workflows across different platforms.</li>
+<li>Much more lightweight than virtual machines.</li>
+<li>Eliminates the “works on my machine” situation.</li>
+<li>For software with many dependencies, in turn with its own dependencies, containers offer possibly the only way to preserve the computational experiment for future reproducibility.</li>
+</ul>
+</section>
+<section id="cons" class="slide level2">
+<h2>Cons</h2>
+<ul>
+<li>Containers can have security vulnerabilities which can be exploited.</li>
+<li>Can be used to hide away software installation problems and thereby discourage good software development practices.</li>
+<li>It may not be clear whether to record the environment in the image part or the recipe part.</li>
+</ul>
+</section>
+<section id="discussion-reproducibility" class="slide level2">
+<h2>Discussion: reproducibility</h2>
+<ul>
+<li class="fragment">Do you think containers contribute to reproducible research?</li>
+<li class="fragment">Do you see a use case for your own work?</li>
+</ul>
+<!-- ## Lesson page
+[Code Refinery/Reproducible Research/Recording Environments](https://coderefinery.github.io/reproducible-research/04-environments/) -->
+</section></section>
+<section>
+<section id="recording-computational-steps" class="title-slide slide level1">
+<h1>Recording Computational Steps</h1>
+
+</section>
+<section id="lesson-page-2" class="slide level2">
+<h2>Lesson page</h2>
+<p><a href="https://coderefinery.github.io/reproducible-research/05-workflow-management/">Code Refinery/Reproducible Research/Recording Computational Steps</a></p>
+</section></section>
+<section>
+<section id="open-science" class="title-slide slide level1">
+<h1>Open Science</h1>
+
+</section>
+<section id="sharing-research-data" class="slide level2">
+<h2>Sharing research data</h2>
+<p>The Open Science movement encourages researchers to share research output beyond the contents of a published academic article (and possibly supplementary information).</p>
+</section>
+<section id="in-favor" class="slide level2">
+<h2>In favor</h2>
+<p>Arguments in favor <a href="https://en.wikipedia.org/wiki/Open_science">(from Wikipedia)</a>:</p>
+<ul>
+<li>Open access publication of research reports and data allows for rigorous peer-review</li>
+<li>Science is publicly funded so all results of the research should be publicly available</li>
+<li>Open Science will make science more reproducible and transparent</li>
+<li>Open Science has more impact</li>
+<li>Open Science will help answer uniquely complex questions</li>
+</ul>
+</section>
+<section id="against" class="slide level2">
+<h2>Against</h2>
+<p>Arguments against <a href="https://en.wikipedia.org/wiki/Open_science">(from Wikipedia)</a>:</p>
+<ul>
+<li>Too much unsorted information overwhelms scientists</li>
+<li>Potential misuse</li>
+<li>The public will misunderstand science data</li>
+<li>Increasing the scale of science will make verification of any discovery more difficult</li>
+<li>Low-quality science</li>
+</ul>
+</section>
+<section id="data-cycle" class="slide level2">
+<h2>Data cycle</h2>
+<img data-src="./img/turing-way/36-data-research-cycle.jpg" title="fig:" class="stretch" alt="CC-BY Scriberia" />
+<aside class="notes">
+<p>(This image was created by <a href="http://www.scriberia.co.uk">Scriberia</a> for <a href="https://the-turing-way.netlify.com">The Turing Way</a> community and is used under a CC-BY licence. The image was obtained from <a href="https://zenodo.org/record/3332808">https://zenodo.org/record/3332808</a>.)</p>
+</aside>
+</section></section>
+<section>
+<section id="fair" class="title-slide slide level1">
+<h1>FAIR</h1>
+
+</section>
+<section id="fair-principles" class="slide level2">
+<h2>FAIR principles</h2>
+<img data-src="./img/turing-way/8-fair-principles.jpg" title="fig:" class="stretch" alt="CC-BY Scriberia" />
+<aside class="notes">
+<p>(This image was created by <a href="http://www.scriberia.co.uk">Scriberia</a> for <a href="https://the-turing-way.netlify.com">The Turing Way</a> community and is used under a CC-BY licence. The image was obtained from <a href="https://zenodo.org/record/3332808">https://zenodo.org/record/3332808</a>.)</p>
+<p>“FAIR” is the current buzzword for data management. You may be asked about it in, for example, making data management plans for grants:</p>
+</aside>
+</section>
+<section id="findable" class="slide level2">
+<h2>Findable</h2>
+<ul>
+<li>Will anyone else know that your data exists?</li>
+<li>Solutions: put it in a standard repository, or at least a description of the data. Get a digital object identifier (DOI).</li>
+</ul>
+</section>
+<section id="accessible" class="slide level2">
+<h2>Accessible</h2>
+<ul>
+<li>Once someone knows that the data exists, can they get it?</li>
+<li>Usually solved by being in a repository, but for non-open data, may require more procedures.</li>
+</ul>
+</section>
+<section id="interoperable" class="slide level2">
+<h2>Interoperable</h2>
+<ul>
+<li>Is your data in a format that can be used by others, like csv instead of PDF?</li>
+<li>Or better than csv. Example: <a href="https://5stardata.info/en/">5-star open data</a></li>
+</ul>
+</section>
+<section id="reusable" class="slide level2">
+<h2>Reusable</h2>
+<ul>
+<li>Is there a license allowing others to re-use?</li>
+</ul>
+</section>
+<section id="fair-open" class="slide level2">
+<h2>FAIR <code>!=</code> Open</h2>
+<p>Even though this is usually referred to as “open data”, it means considering and making good decisions, even if non-open.</p>
+<p>Note that FAIR principles do not require data/software to be open.</p>
+</section>
+<section id="fair-software" class="slide level2">
+<h2>FAIR Software</h2>
+<p>FAIR principles are usually discussed in the context of data, but they apply also for research software.</p>
+<p>See: <a href="http://fair-software.nl/">5 recommendation for FAIR software: fair-software.nl</a></p>
+</section>
+<section id="discussion-discuss-open-science" class="slide level2">
+<h2>Discussion: Discuss open science</h2>
+<ul>
+<li>Do you share any other research outputs besides published articles and possibly source code?</li>
+<li>Discuss pros and cons of sharing research data.</li>
+</ul>
+</section>
+<section id="exercise-get-a-doi-at-zenodo" class="slide level2">
+<h2>Exercise: Get a DOI at Zenodo</h2>
+<ol type="1">
+<li>Go to <a href="https://sandbox.zenodo.org/login/">https://sandbox.zenodo.org/login/</a> and sign in with your GitHub account.</li>
+<li>Go to <a href="https://sandbox.zenodo.org/account/settings/github/">https://sandbox.zenodo.org/account/settings/github/</a>.</li>
+<li>Find the repository you wish to publish, and flip the switch to ON.</li>
+<li>Go to GitHub and create a <strong>release</strong>.</li>
+<li>Add the DOI badge to your README.</li>
+</ol>
+<aside class="notes">
+<p>Digital object identifiers (DOI) are the backbone of the academic reference and metrics system. In this exercise we will see how to make a GitHub repository citable by archiving it on the <a href="http://about.zenodo.org/">Zenodo</a> archiving service. Zenodo is a general-purpose open access repository created by OpenAIRE and CERN.</p>
+</aside>
+</section>
+<section id="see-lesson-page" class="slide level2">
+<h2>See lesson page</h2>
+<p><a href="https://coderefinery.github.io/reproducible-research/06-sharing/#services-for-sharing-and-collaborating-on-research-data">Code Refinery: Reproducible Research</a></p>
 </section></section>
     </div>
   </div>
