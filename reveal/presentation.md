@@ -41,6 +41,7 @@ title: Reproducible Research
 
 ## Why all the talk?
 ![](./img/reproducibility_nature.jpg)
+
 ::: {.notes}
 A 2016
 [survey](http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)
@@ -57,7 +58,7 @@ domains of science.
 - Difficult to rerun the computational steps
 
 ## Or in short
-![](./img/Miracle.jpg)
+![](./img/Miracle.jpg){.stretch}
 
 ---
 
@@ -67,12 +68,12 @@ A published article is like the top of a pyramid. It rests on multiple
 levels that each contributes to its reproducibility.
 :::
 
-![](./img/repro-pyramid.png)
+![](./img/repro-pyramid.png){.stretch}
 
-# Reproducible, replicable, robust, generalisable
+# Reproducible, Replicable, Robust, Generalisable
 
-## The four riders
-![CC-BY Scriberia](./img/turing-way/39-reproducible-replicable-robust-generalisable.jpg)
+## Semantics
+![CC-BY Scriberia](./img/turing-way/39-reproducible-replicable-robust-generalisable.jpg){.stretch}
 
 ::: {.notes}
 (This image was created by [Scriberia](http://www.scriberia.co.uk) for [The

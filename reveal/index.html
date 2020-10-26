@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Reproducible Research</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="./reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="./reveal.js/dist/theme/simple.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Reproducible Research</h1>
+</section>
+
 <section>
 <section id="motivation" class="title-slide slide level1">
 <h1>Motivation</h1>
@@ -56,7 +86,10 @@
 </section>
 <section id="why-all-the-talk" class="slide level2">
 <h2>Why all the talk?</h2>
-<p><img data-src="./img/reproducibility_nature.jpg" /> ::: {.notes} A 2016 <a href="http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">survey</a> in Nature revealed that irreproducible experiments are a problem across all domains of science. :::</p>
+<p><img data-src="./img/reproducibility_nature.jpg" /></p>
+<aside class="notes">
+<p>A 2016 <a href="http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970">survey</a> in Nature revealed that irreproducible experiments are a problem across all domains of science.</p>
+</aside>
 </section>
 <section id="factors-behind-irreproducible-research" class="slide level2">
 <h2>Factors behind irreproducible research</h2>
@@ -70,25 +103,23 @@
 </section>
 <section id="or-in-short" class="slide level2">
 <h2>Or in short</h2>
-<p><img data-src="./img/Miracle.jpg" /></p>
+<img data-src="./img/Miracle.jpg" class="stretch" />
 </section>
 <section id="levels-of-reproducibility" class="slide level2">
 <h2>Levels of reproducibility</h2>
 <aside class="notes">
 <p>A published article is like the top of a pyramid. It rests on multiple levels that each contributes to its reproducibility.</p>
 </aside>
-<p><img data-src="./img/repro-pyramid.png" /></p>
+<img data-src="./img/repro-pyramid.png" class="stretch" />
 </section></section>
 <section>
 <section id="reproducible-replicable-robust-generalisable" class="title-slide slide level1">
-<h1>Reproducible, replicable, robust, generalisable</h1>
+<h1>Reproducible, Replicable, Robust, Generalisable</h1>
 
 </section>
-<section id="the-four-riders" class="slide level2">
-<h2>The four riders</h2>
-<figure>
-<img data-src="./img/turing-way/39-reproducible-replicable-robust-generalisable.jpg" alt="CC-BY Scriberia" /><figcaption aria-hidden="true">CC-BY Scriberia</figcaption>
-</figure>
+<section id="semantics" class="slide level2">
+<h2>Semantics</h2>
+<img data-src="./img/turing-way/39-reproducible-replicable-robust-generalisable.jpg" title="fig:" class="stretch" alt="CC-BY Scriberia" />
 <aside class="notes">
 <p>(This image was created by <a href="http://www.scriberia.co.uk">Scriberia</a> for <a href="https://the-turing-way.netlify.com">The Turing Way</a> community and is used under a CC-BY licence. The image was obtained from <a href="https://zenodo.org/record/3332808">https://zenodo.org/record/3332808</a>.)</p>
 <p>While reproducibility is the minimum requirement and can be solved with “good enough” computational practices, replicability/robustness/generalisability of scientific findings are an even greater concern involving research misconduct, questionable research practices (p-hacking, HARKing, cherry-picking), sloppy methods, and other conscious and unconscious biases.</p>
@@ -101,3 +132,31 @@
 <p>Can you give some examples? What can we do about it?</p>
 </blockquote>
 </section></section>
+    </div>
+  </div>
+
+  <script src="./reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="./reveal.js/plugin/notes/notes.js"></script>
+  <script src="./reveal.js/plugin/search/search.js"></script>
+  <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
