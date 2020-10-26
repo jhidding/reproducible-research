@@ -1,3 +1,6 @@
 [submodule "jekyll-common"]
 	path = jekyll-common
 	url = https://github.com/coderefinery/jekyll-common.git
+[submodule "reveal/reveal.js"]
+	path = reveal/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
